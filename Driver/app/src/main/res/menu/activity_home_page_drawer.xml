@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person_outline_black_24dp"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_payment"
+            android:icon="@drawable/ic_attach_money_black_24dp"
+            android:title="Payment" />
+        <item
+            android:id="@+id/nav_trips"
+            android:icon="@drawable/ic_directions_car_black_24dp"
+            android:title="Trips" />
+        <item
+            android:id="@+id/nav_extras"
+            android:icon="@drawable/ic_more_horiz_black_24dp"
+            android:title="Extras" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
+                android:title="Logout" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+        </menu>
+    </item>
+
+</menu>

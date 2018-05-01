@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="line">
+            <!-- Draw a 2dp width border around shape -->
+            <stroke
+                android:color="#ffffff"
+                android:width="1dp"/>
+        </shape>
+    </item>
+    <!-- Overlap the left, top and right border using background color  -->
+    <item
+        android:bottom="2dp">
+        <shape android:shape="line">
+            <solid android:color="#fffbce"/>
+        </shape>
+    </item>
+</selector>
