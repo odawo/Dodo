@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_color"
-    tools:context="com.vanessaodawo.driver.Fragments.Login">
+    tools:context="com.vanessaodawo.driver.Login">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

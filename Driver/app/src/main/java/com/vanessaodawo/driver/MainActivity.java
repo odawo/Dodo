@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.vanessaodawo.driver.Fragments.Login;
-import com.vanessaodawo.driver.Fragments.Register;
-
 public class MainActivity extends AppCompatActivity {
 
     Button gSign, fSign, emailSignUp;

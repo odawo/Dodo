@@ -1,4 +1,4 @@
-package com.vanessaodawo.driver.Fragments;
+package com.vanessaodawo.driver;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,57 +9,62 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.vanessaodawo.driver.MainActivity;
+import com.vanessaodawo.driver.HomePage;
 import com.vanessaodawo.driver.R;
 
-public class Register extends Fragment {
+public class Login extends Fragment {
 
-    Button registerBtn;
-    ImageButton backBtn;
+    Button loginBtn;
+    TextView forgotPass;
 
     private OnFragmentInteractionListener mListener;
 
-    public Register() {
+    public Login() {
         // Required empty public constructor
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view  = inflater.inflate(R.layout.fragment_register, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        registerBtn = view.findViewById(R.id.registerBtn);
-        backBtn = view.findViewById(R.id.backBtn);
+        loginBtn = view.findViewById(R.id.loginBtn);
+        forgotPass = view.findViewById(R.id.forgotPass);
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerUser();
+                loginUser();
             }
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MainActivity.class));
+                forgotPassMod();
             }
         });
 
         return view;
     }
 
-    private void registerUser() {
-        Toast.makeText(getActivity(), "User Registration Button clicked", Toast.LENGTH_SHORT).show();
+    private void loginUser() {
+        Toast.makeText(getContext(), "login button clicked. ", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getActivity(), HomePage.class));
+    }
+
+    private void forgotPassMod() {
+        Toast.makeText(getContext(), "forgot password button clicked. ", Toast.LENGTH_SHORT).show();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
