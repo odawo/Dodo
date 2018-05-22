@@ -42,7 +42,8 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".Profile" />
-        <activity android:name=".Payment"></activity>
+        <activity android:name=".Payment" />
+        <activity android:name=".MySplash"></activity>
     </application>
 
 </manifest>

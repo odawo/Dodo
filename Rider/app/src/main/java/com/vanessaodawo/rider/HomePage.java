@@ -125,16 +125,17 @@ public class HomePage extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-        if (id == R.id.nav_profile) {
-//            Toast.makeText(this, "profile clicked", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, Profile.class));
-            // Handle the camera action
-        }  else if (id == R.id.nav_payment) {
-            startActivity(new Intent(this, Payment.class));
-        } else if (id == R.id.nav_logout) {
-            startActivity(new Intent(this, MainActivity.class));
+        switch (item.getItemId()) {
+            case R.id.nav_profile:
+                startActivity(new Intent(this, Profile.class));
+                break;
+            case R.id.nav_payment:
+                startActivity(new Intent(this, Profile.class));
+                break;
+            case R.id.nav_logout:
+                startActivity(new Intent(this, Profile.class));
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
