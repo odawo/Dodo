@@ -31,6 +31,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.vanessaodawo.r_client.Fragments.Login;
 import com.vanessaodawo.r_client.Fragments.Register;
 
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout rlay1, rlay2;
 
     FirebaseAuth firebaseAuth;
+    DatabaseReference clientDb;
     GoogleSignInClient mGoogleSignInClient;
 
     CallbackManager callbackManager;
@@ -78,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(runnable, 15000);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        clientDb = firebaseDatabase.getReference("ClientInformation");
 
         Google_Sign.setOnClickListener(new View.OnClickListener() {
             @Override

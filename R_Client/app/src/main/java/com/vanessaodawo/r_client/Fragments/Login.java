@@ -1,5 +1,6 @@
 package com.vanessaodawo.r_client.Fragments;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,12 +15,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.vanessaodawo.r_client.MainActivity;
 import com.vanessaodawo.r_client.R;
+
+import dmax.dialog.SpotsDialog;
 
 public class Login extends Fragment {
 
@@ -30,6 +36,8 @@ public class Login extends Fragment {
 
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference clientDb;
 
     public Login() {
         // Required empty public constructor
@@ -53,6 +61,10 @@ public class Login extends Fragment {
         forgotPass = view.findViewById(R.id.forgotPass);
         back = view.findViewById(R.id.backIB);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        clientDb = firebaseDatabase.getReference("ClientInformation");
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,8 +86,6 @@ public class Login extends Fragment {
             }
         });
 
-        firebaseAuth = FirebaseAuth.getInstance();
-
         return view;
     }
 
@@ -89,6 +99,9 @@ public class Login extends Fragment {
 
         } else {
 
+//            AlertDialog.Builder waitingD = new AlertDialog.Builder(getActivity());
+//            SpotsDialog.Builder ad = new SpotsDialog.Builder(getActivity());
+
             firebaseAuth.signInWithEmailAndPassword(log_email, log_pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -101,6 +114,13 @@ public class Login extends Fragment {
                         Toast.makeText(getActivity(), "AUTHENTICATION ERROR. TRY AGAIN", Toast.LENGTH_SHORT).show();
                         updateUI(null);
                     }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getActivity(), "ERROR : " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    updateUI(null);
+                    startActivity(new Intent(getActivity(), MainActivity.class));
                 }
             });
         }
