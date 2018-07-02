@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "276993530405",
+    "firebase_url": "https://dodor-fc9df.firebaseio.com",
+    "project_id": "dodor-fc9df",
+    "storage_bucket": "dodor-fc9df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276993530405:android:cf453822ce3c2ec5",
+        "android_client_info": {
+          "package_name": "com.vanessaodawo.r_client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276993530405-1kf5sn9q0h58o6e7kg9nlua86caiggkt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vanessaodawo.r_client",
+            "certificate_hash": "5443ee3f555c31abd3b3603f3141a65f7b731250"
+          }
+        },
+        {
+          "client_id": "276993530405-4skfu72h1njp2lqrclto3qqhuuhs3las.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "276993530405-4skfu72h1njp2lqrclto3qqhuuhs3las.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYhUoONtoOMfvDVcpQaBM21nIkLpPVybY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276993530405-4skfu72h1njp2lqrclto3qqhuuhs3las.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
