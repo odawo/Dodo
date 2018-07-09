@@ -76,7 +76,7 @@
             android:background="@drawable/ic_check_circle_black_24dp"
             android:clickable="true" />
 
-</LinearLayout>
+    </LinearLayout>
 
 <LinearLayout
     android:id="@+id/floatinglayout"

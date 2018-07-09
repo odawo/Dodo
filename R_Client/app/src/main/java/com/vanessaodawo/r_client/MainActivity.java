@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
         // [START signin]
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
-        Toast.makeText(this, "google signup button clicked", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "google signup button clicked and loaded", Toast.LENGTH_SHORT).show();
     }
 
 //    private void revokeAccess() {

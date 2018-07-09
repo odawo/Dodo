@@ -17,6 +17,27 @@
         android:text="Payment Methods"/>
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:drawableLeft="@drawable/ic_monetization_on_black_24dp"
+        android:textSize="20sp"
+        android:text="   Cash"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:drawableLeft="@drawable/ic_credit_card_black_24dp"
+        android:textSize="20sp"
+        android:text="   Card"
+        android:clickable="true"/>
+
+
+    <TextView
         android:id="@+id/credCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +46,8 @@
         android:textSize="20sp"
         android:text="Add Credit Card or Debit Card"
         android:clickable="true"
-        android:textColor="@android:color/holo_blue_dark"/>
+        android:textColor="@android:color/holo_blue_dark"
+        android:contextClickable="true"/>
 
     <TextView
         android:layout_width="match_parent"

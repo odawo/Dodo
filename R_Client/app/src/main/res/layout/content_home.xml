@@ -44,8 +44,8 @@
                     android:layout_margin="10dp"
                     android:layout_gravity="bottom|center_horizontal"
                     android:text="call cab"
-                    android:textColor="@android:color/white"
-                    android:background="#aaaaaa"/>
+                    android:textColor="@android:color/black"
+                    android:background="#FFD500"/>
 
             </RelativeLayout>
 

@@ -102,6 +102,7 @@ public class Register extends Fragment {
                     clients.setC_tel(telephone.getText().toString().trim());
 
                     if (task.isSuccessful()) {
+//                        registers new users to firebaseuser & db
                         clientDb.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(clients).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
