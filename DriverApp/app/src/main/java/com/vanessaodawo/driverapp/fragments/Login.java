@@ -1,10 +1,14 @@
 package com.vanessaodawo.driverapp.fragments;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +17,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.vanessaodawo.driverapp.HomePage;
 import com.vanessaodawo.driverapp.MainActivity;
 import com.vanessaodawo.driverapp.R;
@@ -22,6 +29,8 @@ public class Login extends Fragment {
     Button loginBtn;
     ImageButton back;
     TextView forgotPass;
+
+    String TAG;
 
 //    private OnFragmentInteractionListener mListener;
 
@@ -75,7 +84,40 @@ public class Login extends Fragment {
     }
 
     private void forgotPassMod() {
-        Toast.makeText(getContext(), "forgot password button clicked. ", Toast.LENGTH_SHORT).show();
+        displayPopup();
+    }
+
+    private void displayPopup() {
+
+        final String resetPass = forgotPass.getText().toString().trim();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Forgot Password.");
+        builder.setPositiveButton("send", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                FirebaseAuth.getInstance().sendPasswordResetEmail(resetPass).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "onSuccess: sent");
+                        Toast.makeText(getActivity(), "A password reset link has been sent to your email." , Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "ERROR : " + e , Toast.LENGTH_SHORT).show();
+                        forgotPass.setText("");
+                    }
+                });
+            }
+
+        }).setNegativeButton("exit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(getActivity(), Login.class));
+            }
+        });
+
     }
 
 }

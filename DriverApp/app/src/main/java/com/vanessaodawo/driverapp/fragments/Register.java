@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.vanessaodawo.driverapp.MainActivity;
+import com.vanessaodawo.driverapp.Profile;
 import com.vanessaodawo.driverapp.R;
 
 public class Register extends Fragment {
@@ -60,35 +61,6 @@ public class Register extends Fragment {
 
     private void registerUser() {
         Toast.makeText(getActivity(), "User Registration Button clicked", Toast.LENGTH_SHORT).show();
-//        startActivity(new Intent(getActivity(), Profile.class));
+        startActivity(new Intent(getActivity(), Profile.class));
     }
-//
-//    // TODO: Rename method, update argument and hook method into UI event
-//    public void onButtonPressed(Uri uri) {
-//        if (mListener != null) {
-//            mListener.onFragmentInteraction(uri);
-//        }
-//    }
-//
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
-//
-//    public interface OnFragmentInteractionListener {
-//        // TODO: Update argument type and name
-//        void onFragmentInteraction(Uri uri);
-//    }
 }
