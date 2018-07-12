@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_weight="1"
+    tools:context=".Fragments.Ride_Data">
+
+   <ImageView
+       android:id="@+id/mapshot"
+       android:layout_width="match_parent"
+       android:layout_height="200dp"
+       android:background="@drawable/ic_map_black_24dp" />
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="date"
+       android:textSize="15sp" />
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="start time  -   end time"
+       android:textSize="15sp"/>
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="cost"
+       android:textSize="15sp"/>
+
+   <view
+       android:layout_width="match_parent"
+       android:layout_height="5dp"
+       android:background="#1A206D"
+       android:layout_marginTop="10dp"/>
+
+   <view
+       android:layout_width="match_parent"
+       android:layout_height="5dp"
+       android:background="#1A206D"
+       android:layout_marginTop="10dp"/>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:layout_marginTop="20dp"
+       android:layout_weight="1">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15sp"
+          android:text="Lost an item"/>
+
+      <view
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:background="#1A206D"
+          android:layout_marginTop="10dp"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15sp"
+          android:text="Complain about driver"/>
+
+      <view
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:background="#1A206D"
+          android:layout_marginTop="10dp"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15sp"
+          android:text="Issue with the car"
+          android:layout_marginTop="10dp"/>
+
+      <view
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:background="#1A206D"
+          android:layout_marginTop="10dp"/>
+
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15sp"
+          android:text="Check my fare"
+          android:layout_marginTop="10dp"/>
+
+      <view
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:background="#1A206D"
+          android:layout_marginTop="10dp"/>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15sp"
+          android:text="Something different"
+          android:layout_marginTop="10dp"/>
+
+      <view
+          android:layout_width="match_parent"
+          android:layout_height="2dp"
+          android:background="#1A206D"
+          android:layout_marginTop="10dp"/>
+
+      <Button
+          android:id="@+id/tripreceipt"
+          android:layout_width="200dp"
+          android:layout_height="wrap_content"
+          android:text="ride receipt"
+          android:layout_gravity="center"/>
+
+   </LinearLayout>
+
+</LinearLayout>

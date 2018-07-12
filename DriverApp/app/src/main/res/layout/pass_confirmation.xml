@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_orig"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tvt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="Check your email. "/>
+
+    <TextView
+        android:id="@+id/tvt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvt"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="A special link has been snt to the set email.
+        Click the link to redirect you to your address and get started."/>
+
+    <TextView
+        android:id="@+id/tvt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="15sp"
+        android:layout_below="@id/tvt2"
+        android:layout_marginTop="20dp"
+        android:text="Dodor"/>
+
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvt3"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Check your email. "
+        android:background="#FFD500"/>
+
+</RelativeLayout>

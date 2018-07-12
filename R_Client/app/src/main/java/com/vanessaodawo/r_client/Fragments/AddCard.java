@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +18,7 @@ import android.widget.Toast;
 import com.vanessaodawo.r_client.Payment;
 import com.vanessaodawo.r_client.R;
 
-public class AddCard extends Fragment {
+public class AddCard extends DialogFragment {
 
     EditText cardNo, monthYr, code, postCode;
     ImageButton backBtn, nextButton;
@@ -65,6 +67,15 @@ public class AddCard extends Fragment {
                 Toast.makeText(getActivity(), "will continue to terms of payment link", Toast.LENGTH_SHORT).show();
             }
         });
+
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+        DialogFragment dialogFragment = new AddCard();
+        dialogFragment.show(ft, "dialog");
 
         return view;
     }

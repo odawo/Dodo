@@ -26,6 +26,7 @@
         android:text="   Cash"
         android:clickable="true"/>
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,8 +47,7 @@
         android:textSize="20sp"
         android:text="Add Credit Card or Debit Card"
         android:clickable="true"
-        android:textColor="@android:color/holo_blue_dark"
-        android:contextClickable="true"/>
+        android:textColor="@android:color/holo_blue_dark"/>
 
     <TextView
         android:layout_width="match_parent"

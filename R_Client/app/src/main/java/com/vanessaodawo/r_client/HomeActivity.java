@@ -22,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -45,11 +46,14 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.vanessaodawo.r_client.POJO.Clients;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
+
+    TextView username;
 
     FirebaseAuth firebaseAuth;
     GoogleSignInClient mGoogleSignInClient;
@@ -77,6 +81,11 @@ public class HomeActivity extends AppCompatActivity
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+//        username = findViewById(R.id.iduser);
+//        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+//        String name = firebaseUser.getEmail();
+//        username.setText(name);
 
 //        map
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -215,7 +224,7 @@ public class HomeActivity extends AppCompatActivity
 
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
 
         mMap.setTrafficEnabled(true);
 
@@ -229,8 +238,8 @@ public class HomeActivity extends AppCompatActivity
     public void onConnected(@Nullable Bundle bundle) {
 //        mLocationRequest = new LocationRequest();
         mLocationRequest = LocationRequest.create();
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(1000);
+        mLocationRequest.setInterval(100);
+        mLocationRequest.setFastestInterval(100);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         if (ContextCompat.checkSelfPermission(this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION)

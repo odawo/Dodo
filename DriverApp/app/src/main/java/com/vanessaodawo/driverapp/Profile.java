@@ -16,18 +16,18 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        ppic = findViewById(R.id.profile_image);
-        ppic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setPic();
-            }
-        });
+//        ppic = findViewById(R.id.profile_image);
+//        ppic.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                setPic();
+//            }
+//        });
 
     }
 
-    private void setPic() {
-        Toast.makeText(this, "will pic a photo", Toast.LENGTH_SHORT).show();
-    }
+//    private void setPic() {
+//        Toast.makeText(this, "will pick a photo", Toast.LENGTH_SHORT).show();
+//    }/
 
 }

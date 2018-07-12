@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         rlay1 = findViewById(R.id.childrlay);
         rlay2 = findViewById(R.id.childrlay2);
 
-        handler.postDelayed(runnable, 15000);
+        handler.postDelayed(runnable, 30000);
 
         firebaseAuth = FirebaseAuth.getInstance();
 

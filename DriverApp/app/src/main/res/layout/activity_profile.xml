@@ -11,18 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:orientation="vertical"
-        android:background="@color/com_facebook_button_background_color_disabled">
+        android:background="@color/cardview_light_background">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/profile_image"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/com_facebook_profile_picture_blank_portrait"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FF000000"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"/>
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/profile_image"-->
+            <!--android:layout_width="130dp"-->
+            <!--android:layout_height="130dp"-->
+            <!--android:src="@drawable/com_facebook_profile_picture_blank_portrait"-->
+            <!--app:civ_border_width="2dp"-->
+            <!--app:civ_border_color="#FF000000"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="30dp"/>-->
 
     </LinearLayout>
 
@@ -35,13 +35,13 @@
         android:background="@android:color/primary_text_dark"
         android:layout_alignParentBottom="true">
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompact="@drawable/ic_check_circle_black_24dp"/>
+        <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:id="@+id/fab"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom|end"-->
+            <!--android:layout_margin="@dimen/fab_margin"-->
+            <!--app:srcCompat="@drawable/ic_check_circle_black_24dp"/>-->
 
     </LinearLayout>
 
