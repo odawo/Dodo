@@ -21,11 +21,17 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.vanessaodawo.driverapp.HomePage;
 import com.vanessaodawo.driverapp.MainActivity;
+import com.vanessaodawo.driverapp.POJO.Driver;
 import com.vanessaodawo.driverapp.R;
 
 public class Login extends Fragment {
@@ -41,6 +47,7 @@ public class Login extends Fragment {
     FirebaseAuth firebaseAuth;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference usersdb;
+    FirebaseUser firebaseUser;
 
 //    private OnFragmentInteractionListener mListener;
 
@@ -94,9 +101,53 @@ public class Login extends Fragment {
 
     private void loginUser() {
 
+        loginBtn.setVisibility(View.INVISIBLE);
 
-        Toast.makeText(getContext(), "login button clicked. ", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getActivity(), HomePage.class));
+        if (email == null || password == null ) {
+            Toast.makeText(getActivity(), "Kindly fill all empty fields", Toast.LENGTH_SHORT).show();
+        } else {
+            firebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                @Override
+                public void onSuccess(AuthResult authResult) {
+                    FirebaseDatabase.getInstance().getReference("DRIVER").child(firebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            Driver firebaseUser = dataSnapshot.getValue(Driver.class);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+                    firebaseUser = firebaseAuth.getCurrentUser();
+                    updateUI(firebaseUser);
+                    startActivity(new Intent(getActivity(), HomePage.class));
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getActivity(), "ERROR : " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    loginBtn.setVisibility(View.VISIBLE);
+                    updateUI(firebaseUser);
+                }
+            });
+        }
+
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+
+    private void updateUI(FirebaseUser currentUser) {
+        if (currentUser != null) {
+            startActivity(new Intent(getActivity(), HomePage.class));
+        }
     }
 
     private void forgotPassMod() {
@@ -114,7 +165,7 @@ public class Login extends Fragment {
             @Override
             public void onClick(View v) {
                 if (em.isEmpty()) {
-                    Toast.makeText(getActivity(), "Email is empty.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Email field is empty.", Toast.LENGTH_SHORT).show();
                 } else {
                     FirebaseAuth.getInstance().sendPasswordResetEmail(em).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override

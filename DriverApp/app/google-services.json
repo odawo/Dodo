@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "498094362439",
-    "firebase_url": "https://dodo-driverapp.firebaseio.com",
-    "project_id": "dodo-driverapp",
-    "storage_bucket": "dodo-driverapp.appspot.com"
+    "project_number": "276993530405",
+    "firebase_url": "https://dodor-fc9df.firebaseio.com",
+    "project_id": "dodor-fc9df",
+    "storage_bucket": "dodor-fc9df.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:498094362439:android:c5be52d8ebb34946",
+        "mobilesdk_app_id": "1:276993530405:android:f357ec6649c2917e",
         "android_client_info": {
-          "package_name": "com.vanessaodawo.driver"
+          "package_name": "com.vanessaodawo.driverapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "498094362439-v8drrn48vj27he7mmaj0t3f199h3c97d.apps.googleusercontent.com",
+          "client_id": "276993530405-ek5qivqhpk8lr7skukgb2qqs3b547n22.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.vanessaodawo.driver",
-            "certificate_hash": "5443ee3f555c31abd3b3603f3141a65f7b731250"
+            "package_name": "com.vanessaodawo.driverapp",
+            "certificate_hash": "f24c3e90c29283b321f0edd507106ff73750e0b9"
           }
         },
         {
-          "client_id": "498094362439-pjdq4u76mh3pptg4pvti3htbbunvem6i.apps.googleusercontent.com",
+          "client_id": "276993530405-4skfu72h1njp2lqrclto3qqhuuhs3las.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBTAQ0WSy4TFEp2x_IQ43cUQDd1rvdOH0I"
+          "current_key": "AIzaSyAYhUoONtoOMfvDVcpQaBM21nIkLpPVybY"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "498094362439-pjdq4u76mh3pptg4pvti3htbbunvem6i.apps.googleusercontent.com",
+              "client_id": "276993530405-4skfu72h1njp2lqrclto3qqhuuhs3las.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -52,28 +52,28 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:498094362439:android:f357ec6649c2917e",
+        "mobilesdk_app_id": "1:276993530405:android:cf453822ce3c2ec5",
         "android_client_info": {
-          "package_name": "com.vanessaodawo.driverapp"
+          "package_name": "com.vanessaodawo.r_client"
         }
       },
       "oauth_client": [
         {
-          "client_id": "498094362439-ibk3tq0qt5m6a02sqcsvr4148dt3dakc.apps.googleusercontent.com",
+          "client_id": "276993530405-1kf5sn9q0h58o6e7kg9nlua86caiggkt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.vanessaodawo.driverapp",
+            "package_name": "com.vanessaodawo.r_client",
             "certificate_hash": "5443ee3f555c31abd3b3603f3141a65f7b731250"
           }
         },
         {
-          "client_id": "498094362439-pjdq4u76mh3pptg4pvti3htbbunvem6i.apps.googleusercontent.com",
+          "client_id": "276993530405-4skfu72h1njp2lqrclto3qqhuuhs3las.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBTAQ0WSy4TFEp2x_IQ43cUQDd1rvdOH0I"
+          "current_key": "AIzaSyAYhUoONtoOMfvDVcpQaBM21nIkLpPVybY"
         }
       ],
       "services": {
@@ -84,7 +84,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "498094362439-pjdq4u76mh3pptg4pvti3htbbunvem6i.apps.googleusercontent.com",
+              "client_id": "276993530405-4skfu72h1njp2lqrclto3qqhuuhs3las.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

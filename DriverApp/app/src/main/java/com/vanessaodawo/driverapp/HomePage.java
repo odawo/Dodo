@@ -40,6 +40,8 @@ import android.view.MenuItem;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -116,21 +118,46 @@ public class HomePage extends AppCompatActivity
             }
         });
 
-//
-//
-//
+
+
+
 
 
 //        GeoFire
-//        driverRef = FirebaseDatabase.getInstance().getReference("Driver");
-//        geoFire = new GeoFire(driverRef);
+        driverRef = FirebaseDatabase.getInstance().getReference("Driver");
+        geoFire = new GeoFire(driverRef);
 
         setUpLocation();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+//                builder.setTitle("SOS ALERT");
+//                builder.setMessage("Send an alert for help?");
+//                builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        Toast.makeText(getBaseContext(), "Alert sent to provider", Toast.LENGTH_SHORT).show();
+//                        finish();
+//                        confirmation();
+//                    }
+//                }).setNegativeButton("exit", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//                AlertDialog dialog = builder.create();
+//                dialog.show();
+//            }
+//        });
+
+        ImageButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
                 builder.setTitle("SOS ALERT");
                 builder.setMessage("Send an alert for help?");
@@ -187,7 +214,7 @@ public class HomePage extends AppCompatActivity
     }
 
     private void createLocationRequest() {
-        mLocationRequest = new LocationRequest();
+        mLocationRequest =  LocationRequest.create();
         mLocationRequest.setInterval(UPDATE_INTERVAL);
         mLocationRequest.setFastestInterval(FASTEST_INTERVAL);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
